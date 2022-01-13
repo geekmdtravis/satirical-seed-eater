@@ -7,6 +7,7 @@ import (
 
 
 func main() {
+	SetupInterruptHandler()
 	cfg := GetConfig()
 	
 	fmt.Printf("Satirical Seed Eater (%v)\n", cfg.Version)
