@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -18,6 +20,21 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
-func handleRootRequest(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+type Introduction struct {
+	Name string `json:"name"`
+}
+
+func handleRootRequest(res http.ResponseWriter, req *http.Request) {
+	body, err := ioutil.ReadAll(req.Body)
+	if err != nil {
+		fmt.Fprintf(res, "Error: %v", err)
+		return
+	}
+	var intro Introduction
+	err = json.Unmarshal(body, &intro)
+	if err != nil {
+		fmt.Fprintf(res, "Error: %v", err)
+		return
+	}
+	fmt.Fprintf(res, "Hello, %s!\n", intro.Name)
 }
