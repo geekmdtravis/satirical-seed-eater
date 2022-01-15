@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satirical Seed Eater</title>
+    <link rel="stylesheet" href="./styles.css" async />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Satirical Seed Eater</h1>
+      <p>
+        As a crypto-holder, one of the smartest things you could ever do is have
+        your seed phrase validated. (Not!)
+      </p>
+      <p>
+        Use this tool to validate your seed phrases! Send a <b>POST</b> request
+        to <a href="/validate">the validate page</a> that should be in the form:
+      </p>
+      <code>
+        <pre>
+          {
+            "magicWord": "&lt;your-magic-word&gt;",
+            "seed": "your seed phrase"
+          }
+        </pre>
+      </code>
+      <div class="winking-dog-container">
+        <img
+          class="winking-dog-img"
+          src="./wink-dog.gif"
+          alt="Dog Winking Suspiciously"
+        />
+        <small class="img-subtext">Joker McLiar approves this message. </small>
+      </div>
+    </div>
+  </body>
+</html>
