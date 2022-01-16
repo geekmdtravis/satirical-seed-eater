@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"encoding/json"
@@ -18,7 +18,7 @@ type SeedValidationReply struct {
 	Comment string `json:"comment"`
 }
 
-func handleSeedValidationRequest(res http.ResponseWriter, req *http.Request) {
+func HandleSeedValidationRequest(res http.ResponseWriter, req *http.Request) {
 	reply := SeedValidationReply{Valid: false, Comment: ""}
 
 	body, err := ioutil.ReadAll(req.Body)

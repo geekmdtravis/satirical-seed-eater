@@ -1,3 +1,3 @@
-module github.com/satirical-seed-eater
+module github.com/geekmdtravis/satirical-seed-eater
 
 go 1.17
